@@ -1,8 +1,5 @@
 import 'package:books_app/models/book.dart';
-import 'package:books_app/providers/books_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
 class BookCard extends StatelessWidget {
   final Book book;
