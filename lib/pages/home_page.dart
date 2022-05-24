@@ -26,6 +26,18 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+             Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  
+                },
+                child: const Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Text("Get all books"),
+                ),
+              ),
+            ),
             Consumer<BooksProvider>(
               builder: (context, booksProvider, child) => ListView.builder(
                   shrinkWrap: true,
