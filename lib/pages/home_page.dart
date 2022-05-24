@@ -26,14 +26,24 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            Consumer<BooksProvider>(
-              builder: (context, booksProvider, child) => ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(), // <- Here
-                  itemCount: booksProvider.books.length,
-                  itemBuilder: (context, index) =>
-                      BookCard(book: booksProvider.books[index])),
-            )
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<BooksProvider>().getBooks();
+                },
+                child: const Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Text("Get all books"),
+                ),
+              ),
+            ),
+            ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(), // <- Here
+                itemCount: context.watch<BooksProvider>().books.length,
+                itemBuilder: (context, index) => BookCard(
+                    book: context.watch<BooksProvider>().books[index])),
           ],
         ),
       ),
