@@ -15,14 +15,14 @@
 5. Create a class called BookServices
 6. Add dio `flutter pub add dio`
 7. Initialize a new dio instance `final _dio = Dio();`
-8. Initialize a base url as well
+
    
 ## Part 2: Get Books
 9.  Create a function that returns void called getBooks()
 ``` dart 
 
   void getBooks() {
-    var res = _dio.get(_baseUrl + '/books');
+    var res = _dio.get('https://coded-books-api-crud.herokuapp.com/books');
     print(res);
   }
 ```
@@ -42,9 +42,12 @@ void getBooks() {
 18. But noe we have an error that the `List<Book>` is not as `List<dynamic>` , so we need to convert to not just a List but a List of books
 19. So we need serlization!
 
+## Task - Part one which is only get the responce printed
+
 ## Part 3: Serlization
-1. Add the following packages `flutter pub add json_serializable ,  build_runner `
-2. Go to the books model and add this before the class 
+1. Thery part here 
+2. Add the following packages `flutter pub add json_serializable ,  build_runner `
+3. Go to the books model and add this before the class 
 ```dart 
 import 'package:json_annotation/json_annotation.dart';
 
@@ -62,4 +65,4 @@ part 'book.g.dart';
 6. Add try and catch in case of Dio Error `try{...}on DioError catch(error){...}`
 7. Change return type to `List<Book>`, fix the function to return it
 8. Will Still have an error becasue async functions must return type future `Future<List<Book>>`
-9. finally lets fix the provider as well 
+9. finally lets fix the provider as well add async and await
