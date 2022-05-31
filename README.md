@@ -18,6 +18,7 @@
 
    
 ## Part 2: Get Books
+dont forget to use cmd+shift+p => dart devtools network page to see requests and responces
 9.  Create a function that returns void called getBooks()
 ``` dart 
 
