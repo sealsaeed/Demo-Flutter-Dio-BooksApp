@@ -23,7 +23,7 @@ dont forget to use cmd+shift+p => dart devtools network page to see requests and
 ``` dart 
 
   void getBooks() {
-    var res = _dio.get('https://coded-books-api-crud.herokuapp.com/books');
+    Response res = _dio.get('https://coded-books-api-crud.herokuapp.com/books');
     print(res);
   }
 ```
