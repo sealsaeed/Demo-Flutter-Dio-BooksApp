@@ -8,7 +8,7 @@
 ## Steps
 
 ## Part 1: Setup
-1. Show the response of this end point `https://coded-books-api-crud.herokuapp.com/books`
+1. Show the response of this end point `https://coded-books-api-crud.eapi.joincoded.com/books`
 2. Go through the code
 3. Create a folder called services
 4. Create a file called books-services
@@ -23,7 +23,7 @@ dont forget to use cmd+shift+p => dart devtools network page to see requests and
 ``` dart 
 
   void getBooks() {
-    Response res = _dio.get('https://coded-books-api-crud.herokuapp.com/books');
+    Response res = _dio.get('https://coded-books-api-crud.eapi.joincoded.com/books');
     print(res);
   }
 ```
@@ -37,7 +37,7 @@ void getBooks() {
 12. In the console we see `Instance of 'Future<Response<dynamic>>'`
 13. So lets fix that by making the function wait, add await and async
 14. Now lets make that into an actual book list that we can use
-15. We will have an error if we add `List<Book> res = await _dio.get('https://coded-books-api-crud.herokuapp.com/books');` we need to save that in a type Response 
+15. We will have an error if we add `List<Book> res = await _dio.get('https://coded-books-api-crud.eapi.joincoded.com/books');` we need to save that in a type Response 
 16. try to save that in a List of books ` List<Book> books = res.data;` , we will have an error ``Unhandled Exception: type 'List<dynamic>' is not a subtype of type 'List<Book>'``
 17. So lets add `as list` to the res.data
 18. But noe we have an error that the `List<Book>` is not as `List<dynamic>` , so we need to convert to not just a List but a List of books
