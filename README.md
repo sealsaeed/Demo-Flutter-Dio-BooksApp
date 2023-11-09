@@ -8,7 +8,7 @@
 ## Steps
 
 ## Part 1: Setup
-1. Show the response of this end point `https://coded-books-api-crud.herokuapp.com/books`
+1. Show the response of this end point `https://coded-books-api-crud.eapi.joincoded.com/books`
 2. Go through the code
 3. Create a folder called services
 4. Create a file called books-services
