@@ -1,5 +1,8 @@
 import 'package:books_app/models/book.dart';
+import 'package:books_app/providers/books_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class BookCard extends StatelessWidget {
   final Book book;
@@ -34,13 +37,19 @@ class BookCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.edit)),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.delete,
-                            color: Colors.red,
-                          ))
+                          onPressed: () {
+                            GoRouter.of(
+                              context.push("/update"),
+                            );
+                          },
+                          icon: const Icon(Icons.edit)),
+                      Consumer<BooksProvider>(
+                          builder: (context, value, child) => IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.delete,
+                                color: Colors.red,
+                              )))
                     ],
                   ),
                 ],

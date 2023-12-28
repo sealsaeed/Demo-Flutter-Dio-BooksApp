@@ -1,4 +1,6 @@
+import 'package:books_app/pages/add_page.dart';
 import 'package:books_app/pages/home_page.dart';
+import 'package:books_app/pages/update_page.dart';
 import 'package:books_app/providers/books_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -28,6 +30,14 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/',
         builder: (context, state) => const HomePage(),
+      ),
+      GoRoute(
+        path: '/add',
+        builder: (context, state) => AddPage(),
+      ),
+      GoRoute(
+        path: '/update',
+        builder: (context, state) => UpdatePage(),
       ),
     ],
   );
